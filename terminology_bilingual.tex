@@ -1,0 +1,63 @@
+% Optional editor-facing terminology map. This file is not intended to be part of
+% the main paper unless a bilingual appendix is desired.
+\section*{terminology\_bilingual}
+
+The three role labels are survey-level functional labels. The English terms below
+are the recommended mapping from the Chinese concepts used by the editors to the
+paper vocabulary found across the literature.
+
+\subsection*{Steering Evaluation: 指导系统变化}
+\begin{tabular}{p{0.25\linewidth} p{0.31\linewidth} p{0.34\linewidth}}
+\textbf{中文含义} & \textbf{Recommended English term} & \textbf{Role in the evaluation event} \\
+\hline
+轨迹 / 交互过程 & rollout; interaction trajectory; interaction trace & Direct target from which a Steering judgment is derived. \\
+工具结果 / 任务结果 / 错误 & tool result; task outcome; error & Execution-level targets used to locate what should change. \\
+批评 / 归因 / 奖励 & critique; blame attribution; reward & Judgment or signal over a rollout, not automatically a target. \\
+候选修改 / 更新载体 & candidate modification; update carrier & Prompt, memory, skill, rationale, preference data, program, workflow, or code carrying an update. \\
+可运行候选 & runnable child; successor variant; integrated candidate & Complete system containing a proposed local change. \\
+候选排序 / 父节点选择 & candidate ranking; parent selection & Authority over future search opportunity. \\
+候选-状态关系 & candidate-state relation; compatibility or composition relation & Target at the retention boundary. \\
+归档 / 种群拓扑 & archive/population topology; membership; ancestry; Pareto relation & Retained search structure available to later rounds. \\
+准入 / 保留 / 合并 / 剪枝 & admission; retention; merge; prune & Decisions that change persistent state. \\
+指导性反馈 / 定向变异 & feedback-guided refinement; targeted mutation & How a judgment changes the next candidate. \\
+\end{tabular}
+
+\subsection*{Assurance Evaluation: 建立进步证据}
+\begin{tabular}{p{0.25\linewidth} p{0.31\linewidth} p{0.34\linewidth}}
+\textbf{中文含义} & \textbf{Recommended English term} & \textbf{Role in the evaluation event} \\
+\hline
+冻结后的产物 & frozen output; evolved artifact; frozen successor & Direct product target after the update under test is complete. \\
+系统快照 / 系统配置 & system snapshot; system configuration (model plus harness) & Produced system target for comparison. \\
+版本化演化历史 & versioned evolution history & Direct process target containing snapshots, executions, exposure sequences, replay, costs, incidents, and lineage. \\
+留出评估 & held-out evaluation & Protected evidence for a progress claim. \\
+未见条件 / 跨分布条件 & unseen evaluation; out-of-distribution evaluation & Evidence outside the update conditions. \\
+迁移评估 & transfer evaluation & Evidence under a different model, domain, task, or environment. \\
+回放 / 前序评估 & replay; prequential evaluation & Protocols for retention, forgetting, interference, and sequential learning. \\
+能力 / 泛化 / 迁移 & capability; generalization; transfer & Properties or claims inferred from product-level evaluation. \\
+保留 / 遗忘 / 干扰 & retention; forgetting; interference & Longitudinal properties, not direct targets. \\
+稳定性 / 可塑性 & stability; plasticity & Continual-learning properties inferred from task streams. \\
+安全 / 鲁棒 / 效率 & safety; robustness; efficiency & System properties reported alongside task performance. \\
+进步主张 & progress claim & Survey-level claim requiring protected, reference, or longitudinal evidence. \\
+\end{tabular}
+
+\subsection*{Meta-Evaluation: 评价评价机制}
+\begin{tabular}{p{0.25\linewidth} p{0.31\linewidth} p{0.34\linewidth}}
+\textbf{中文含义} & \textbf{Recommended English term} & \textbf{Role in the evaluation event} \\
+\hline
+批评器 / 归因器 / 评判器 & critic; blamer; model judge & Evaluator targets whose judgments support Steering or Assurance. \\
+奖励模型 / 验证器 & reward model; verifier & Evaluation mechanisms requiring validity and reliability checks. \\
+基准 / 测试集 & benchmark; test suite & Evidence resources whose coverage and comparability can be audited. \\
+标准 / 量规 / 阈值 & criterion; rubric; threshold & Decision rules or measurement criteria under audit. \\
+评估协议 / 聚合规则 & evaluation protocol; aggregation rule & Configuration that determines how evidence becomes a judgment. \\
+有效性 & validity & Agreement with the intended property, human/expert labels, executable ground truth, or formal specification. \\
+可靠性 / 可重复性 & reliability; test-retest consistency & Stability of judgments under repeated use. \\
+一致性 / 校准 / 排名稳定性 & agreement; calibration; ranking stability & Operational checks on judgment quality. \\
+覆盖度 & coverage & Whether relevant tasks, rules, behaviors, or failure conditions are exercised. \\
+分布漂移 / 协议变化 & drift under capability, task-distribution, or protocol change & Conditions that may invalidate an earlier evaluator. \\
+利用漏洞 / 奖励黑客 & exploitation; reward hacking & Optimization improves a proxy without the intended property. \\
+评估器版本 / 证据来源 & evaluator versioning; provenance & Governance for evaluator replacement and historical comparability. \\
+锚定晋升 / 失效记录 & anchored promotion; invalidation & Protected governance of evolving evaluators. \\
+\end{tabular}
+
+\paragraph{Editorial rule.}
+The papers may use different names, such as self-feedback, verbal reinforcement, evaluator-guided search, held-out evaluation, replay, or judge benchmarking. The mapping should therefore be stated explicitly rather than presented as a claim that all papers use the same role vocabulary. In every coding decision, keep the following order visible: target or evidence entity $\rightarrow$ judgment or property $\rightarrow$ downstream decision or progress claim.
